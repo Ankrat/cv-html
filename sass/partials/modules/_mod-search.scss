@@ -1,0 +1,17 @@
+.mod-search{
+
+  div{
+    @include clearfix;
+    padding: 6px 0;
+    float: right;
+    text-align: right;
+  }
+  input{
+    margin: 0;
+    height: $base-line-height;
+    float: left;
+    &:focus{
+      outline: none;
+    }
+  }
+}

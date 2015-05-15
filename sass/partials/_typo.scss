@@ -1,0 +1,58 @@
+h1,h2,h3,h4,h5,h6, strong{
+  font-family: $base-font-bold;
+  margin:0;
+  color: $col-dark-grey;
+}
+
+h1 {
+  @include adjust-font-size-to(35px, 3, $base-font-size);
+}
+
+h2 {
+  @include adjust-font-size-to(28px, 2);
+}
+
+h3 {
+  @include adjust-font-size-to(21px, 1);
+}
+
+h4 {
+  @include adjust-font-size-to(18px, 1);
+}
+
+h5 {
+  @include adjust-font-size-to(16px, 1);
+}
+
+h6 {
+  @include adjust-font-size-to(12px, 1);
+}
+
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {
+    color: #00e;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #06e;
+}
+
+a.btn{
+  @include button-style;
+}
+
+.lt-ie8{
+  a.btn{
+    vertical-align:top;
+    //margin-top:-24px;
+    //background:pink;
+  }
+}

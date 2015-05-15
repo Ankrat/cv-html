@@ -1,0 +1,37 @@
+.mod-brand{
+  @include trailer(2, $base-font-size, margin);
+  .title{
+    float: left;
+  }
+  .contact{
+    float: right;
+    text-align: right;
+  }
+  h1{
+    @include adjust-font-size-to(35px, 2, $base-font-size);
+    @include trailer(0, $base-font-size, "margin");
+    text-transform: uppercase;
+    color: $col-dark-grey;
+  }
+  h2{
+    @include adjust-font-size-to(36px, 2.8, $base-font-size);
+    font-weight: normal;
+    font-family: $base-font-alt;
+    color: $col-grey;
+  }
+}
+
+// Min small to max small
+@media only screen and (min-width: $mq-small-min) and (max-width: $mq-small-max){
+
+}
+
+//max small to tablet (portrait)
+@media only screen and (min-width: $mq-medium-min) and (max-width: $mq-medium-max){
+
+}
+
+//tablet (landscape)
+@media only screen and (min-width: $mq-large-min) and (orientation: landscape){
+
+}
