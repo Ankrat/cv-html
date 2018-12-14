@@ -1,0 +1,289 @@
+/* VP fonts */
+@font-face {
+    font-family: 'vp_sansbold';
+    src: url('/fonts/vpsans-bold-webfont.woff2') format('woff2'),
+        url('/fonts/vpsans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'vp_sanslight';
+    src: url('/fonts/vpsans-light-webfont.woff2') format('woff2'),
+        url('/fonts/vpsans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'vp_sansregular';
+    src: url('/fonts/vpsans-regular-webfont.woff2') format('woff2'),
+        url('/fonts/vpsans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables */
+:root {
+    /* VP brand color*/
+    --pink: rgb(204, 0, 106);
+    /* #cc006a */
+    --dark: rgb(53, 64, 71);
+    /* #354047 */
+    /* VP fonts */
+    --font-sans-vp__bold: 'vp_sansbold';
+    --font-sans-vp__regular: 'vp_sansregular';
+    --font-sans-vp__light: 'vp_sanslight';
+    /* generic colors */
+    --color__copy: #555;
+    --color__copyLight: #777;
+    --color__header: #333;
+    /* meaningful colors */
+    --color__valid: #8dc63f;
+    --color__error: #d31145;
+    --color__warning: #f57b20;
+    --color__information: #777;
+}
+
+/* ==========
+ Global
+========== */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: var(--font-sans-vp__bold);
+}
+
+ol,
+ul,
+li {
+    list-style: inside;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 6px 7px;
+    margin: 0 0.5em;
+    text-decoration: none;
+    background: var(--pink);
+    color: #ffffff;
+    font-family: var(--font-sans-vp__bold);
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover {
+    background: #bd0062;
+}
+
+button:active {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+a {
+    color: var(--pink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+a:hover {
+    color: #bd0062;
+    border-color: inherit;
+}
+a:focus {
+    outline-color: var(--pink);
+    outline-width: 3px;
+    outline-offset: 3px;
+}
+a:active {
+    text-shadow: 1px 1px 3px var(--pink);
+    color: #ffffff;
+}
+
+::selection {
+    color: #fff;
+    background-color: var(--pink);
+}
+
+.input-wrapper {
+    padding: 1em;
+    margin: 0;
+    font-family: var(--font-sans-vp__regular);
+    max-width: 300px;
+}
+.input-wrapper input,
+.input-wrapper select {
+    padding: 8px 5px;
+    margin: 0 5px;
+    border: 1px solid var(--color__copyLight);
+    border-radius: 3px;
+    width: 100%;
+}
+
+/* ==========
+ Helpres
+========== */
+/* Display */
+.u-center {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.u-left {
+    float: left;
+}
+
+.u-right {
+    float: right;
+}
+
+/* clearfix */
+.u-cf:before,
+.u-cf:after {
+    content: '';
+    display: table;
+}
+
+.u-cf:after {
+    clear: both;
+}
+
+/* State */
+.is-valid {
+    color: var(--color__valid);
+    border-color: var(--color__valid);
+}
+
+.is-error {
+    color: var(--color__error);
+    border-color: var(--color__error);
+}
+
+.is-warning {
+    color: var(--color__warning);
+    border-color: var(--color__warning);
+}
+
+.is-information {
+    color: var(--color__information);
+    border-color: var(--color__information);
+}
+
+/**
+*    Loader
+*
+*    <div class="circle">
+*        <div class="circle-inner"></div>
+*    </div>
+**/
+.preloader {
+    width: 42px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.preloader .circle {
+    animation: roll 2s linear infinite;
+}
+
+.preloader .circle,
+.preloader .circle .circle-inner {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background: linear-gradient(#4096ee -50%, rgba(64, 150, 238, 0) 60%);
+}
+
+.preloader .circle .circle-inner::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+@keyframes roll {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Default */
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: var(--font-sans-vp__regular);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color__copy);
+}
+
+h1,
+.h1 {
+    font-size: 1.8em;
+    margin-bottom: 1.8em;
+}
+
+h2,
+.h2 {
+    font-size: 1.6em;
+    margin-bottom: 1.6em;
+}
+
+h3,
+.h3 {
+    font-size: 1.4em;
+    margin-bottom: 1.4em;
+}
+
+h4,
+.h4 {
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+h5,
+.h5 {
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+h6,
+.h6 {
+    font-size: 1em;
+    margin-bottom: 1em;
+}

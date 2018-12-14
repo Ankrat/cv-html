@@ -1,0 +1,37 @@
+.media {
+    margin: 0.5em auto;
+    padding: 0.5em;
+}
+
+.media-figure {
+    margin-right: 1em;
+}
+
+.media-body {
+    margin-bottom: 1em;
+}
+.media-body:last-child {
+    margin-bottom: 0;
+}
+
+.media--left {
+    text-align: left;
+}
+.media--right {
+    text-align: right;
+}
+.media--center {
+    align-items: center;
+    .media-body {
+        flex: 1;
+    }
+}
+
+.media-list {
+    display: flex;
+    align-items: center;
+}
+.media--reverse > .media-figure {
+    order: 1;
+    margin: 0 0 0 1em;
+}
